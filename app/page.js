@@ -1,5 +1,6 @@
 import Leaderboard from "@/components/Leaderboard";
 import clientPromise from "@/lib/mongodb";
+import Image from "next/image";
 export const revalidate = 0;
 
 export default async function Home() {
@@ -12,7 +13,15 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col w-3/4 mx-auto items-center">
-      <p className="text-7xl mt-8 font-bold bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 w-min bg-clip-text text-transparent">Meep</p>
+      <div className="flex mt-8 items-center gap-4">
+        <Image 
+          src="/chromameep.gif"
+          width={100}
+          height={100}
+          alt="Chroma Meep"
+        />
+        <p className="text-7xl mt-[10px] font-bold bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 w-min bg-clip-text text-transparent">Meep</p>
+      </div>
       <div className="w-72 border-neutral-800 bg-neutral-900 border-2 rounded-md mt-8 pt-2 px-5">
         <h1 className="font-semibold text-xl text-neutral-300 text-center">Message Stats</h1>
         <div className="flex flex-col mt-2 divide-y divide-neutral-800 text-neutral-400">
