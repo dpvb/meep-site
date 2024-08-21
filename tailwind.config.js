@@ -12,13 +12,23 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      dropShadow: {
-        glow: [
-          "0 0px 20px rgba(255,255, 255, 0.35)",
-          "0 0px 65px rgba(255, 255,255, 0.2)"
-        ]
+      keyframes: {
+        boom: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.2)" },
+        },
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-11deg)" },
+          "50%": { transform: "rotate(11deg)" },
+        }
+      },
+      animation: {
+        "wiggle": "wiggle 2s ease-in-out infinite",
+        "boom": "boom 50ms ease-in-out forwards",
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-animate')
+  ],
 };
