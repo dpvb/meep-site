@@ -28,6 +28,7 @@ module.exports = {
       }
     },
   },
+  vriants: {},
   plugins: [
     require('tailwindcss-animate')
   ],
