@@ -14,7 +14,7 @@ export default function Leaderboard({ stats }) {
                     </tr>
                 </thead>
                 <tbody className=" text-neutral-400" >
-                    {stats.slice(1).map((user) => (
+                    {stats.map((user) => (
                         <tr key={user._id}>
                             <td className="text-left">{user.username}</td>
                             <td className="text-center">{user.totalMessages}</td>
