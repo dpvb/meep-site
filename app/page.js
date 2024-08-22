@@ -1,4 +1,4 @@
-import Leaderboard from "@/components/Leaderboard"; //WIP
+import Leaderboard from "@/components/Leaderboard";
 import MessageStats from "@/components/MessageStats";
 import ChromaMeep from "@/components/ChromaMeep";
 import clientPromise from "@/lib/mongodb";
