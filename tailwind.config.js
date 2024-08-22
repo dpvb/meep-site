@@ -20,14 +20,20 @@ module.exports = {
         wiggle: {
           "0%, 100%": { transform: "rotate(-11deg)" },
           "50%": { transform: "rotate(11deg)" },
+        },
+        rainbow: {
+          "0%, 100%": { "background-position": "0% 50%" },
+          "50%": { "background-position": "100% 50%" },
         }
       },
       animation: {
         "wiggle": "wiggle 2s ease-in-out infinite",
         "boom": "boom 50ms ease-in-out forwards",
+        "rainbow": "rainbow 3s ease infinite",
       }
     },
   },
+  vriants: {},
   plugins: [
     require('tailwindcss-animate')
   ],
