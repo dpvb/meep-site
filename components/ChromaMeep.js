@@ -27,6 +27,7 @@ export default function ChromaMeep() {
                 priority
                 alt="Chroma Meep"
                 onClick={handleClick}
+                draggable="false"
                 className={`
                     cursor-pointer
                     ${boom ? "animate-boom" : ""}
