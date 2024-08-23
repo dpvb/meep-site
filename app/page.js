@@ -3,6 +3,7 @@ import MessageStats from "@/components/MessageStats";
 import ChromaMeep from "@/components/ChromaMeep";
 import ClickyMeep from "@/components/ClickyMeep"; //Testing ClickyMeep
 import clientPromise from "@/lib/mongodb";
+import Footer from "@/components/Footer";
 
 export const revalidate = 0;
 
@@ -21,8 +22,8 @@ export default async function Home() {
       <div className="flex flex-col md:flex-row items-start gap-4">
         <Leaderboard stats={stats} />
         <MessageStats stats={stats} />
-        
       </div>
+      <Footer />
     </main>
   );
 }
