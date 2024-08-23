@@ -4,6 +4,8 @@ import ChromaMeep from "@/components/ChromaMeep";
 import ClickyMeep from "@/components/ClickyMeep"; //Testing ClickyMeep
 import clientPromise from "@/lib/mongodb";
 import Footer from "@/components/Footer";
+import Link from "next/link"
+
 
 export const revalidate = 0;
 
@@ -23,6 +25,11 @@ export default async function Home() {
         <div className="flex flex-col md:flex-row items-start gap-4">
           <Leaderboard stats={stats} />
           <MessageStats stats={stats} />
+        </div>
+        <div>
+          <Link href="softtacos">
+            Hi im Link
+          </Link>
         </div>
       </div>
       <Footer />
