@@ -24,12 +24,31 @@ module.exports = {
         rainbow: {
           "0%, 100%": { "background-position": "0% 50%" },
           "50%": { "background-position": "100% 50%" },
+        },
+        floatfade: {
+          '0%': {
+            transform: 'translateY(0) translateX(0)',
+            opacity: '1',
+          },
+          '40%': {
+            transform: 'translateY(-340%) translateX(-200%)',
+            opacity: '.6',
+          },
+          '75%': {
+            transform: 'translateY(-600%) translateX(70%)',
+            opacity: '.25',
+          },
+          '100%': {
+            transform: 'translateY(-900%) translateX(-50%)',
+            opacity: '0',
+          },
         }
       },
       animation: {
         "wiggle": "wiggle 2s ease-in-out infinite",
         "boom": "boom 50ms ease-in-out forwards",
         "rainbow": "rainbow 3s ease infinite",
+        "floatfade": "floatfade 1s ease-out forwards",
       }
     },
   },
