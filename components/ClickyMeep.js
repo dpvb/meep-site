@@ -7,6 +7,8 @@ import SpawnableText from "@/components/SpawnableText";
 export default function ChromaMeep({ size }) {
     const [texts, setTexts] = useState([]);
     const [boom, setBoom] = useState(false);
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
     const handleClick = (e) => {
         setBoom((a) => !a);
@@ -16,8 +18,8 @@ export default function ChromaMeep({ size }) {
         }, 50);
 
         //Randomized X and Y value spawn (SpawnableText)
-        const x = Math.floor(Math.random() * ((window.innerWidth - 0) + 1));
-        const y = window.innerHeight - (Math.floor(Math.random() * (200 - 35 + 1)) + 35);
+        const x = Math.random() * width;
+        const y = Math.random() * height;
         setTexts([...texts, { x, y }]);
         console.log(x);
     };

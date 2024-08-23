@@ -1,5 +1,7 @@
 import ClickyMeep from "@/components/ClickyMeep";
 import clientPromise from "@/lib/mongodb";
+import Link from "next/link"
+import "@/app/softtacos/page.css"
 
 export const revalidate = 0;
 
@@ -11,6 +13,11 @@ export default async function Home() {
       <div className="flex mt-8 items-center gap-4">
         <ClickyMeep size={700} />
       </div>
+      <div>
+          <Link href="/">
+            Hi im Zelda
+          </Link>
+        </div>
     </main>
   );
 }

@@ -11,23 +11,29 @@ export default async function MessageStats({ stats }) {
         <div className="flex flex-col mt-2  text-neutral-400">
           
           <div className="py-1 flex justify-between">
-            <p className="text-neutral-300 text-lg">Plinks</p>
+            <p className="text-neutral-300 text-base font-semibold">Plinks</p>
             <p>{plinkCount}</p>
           </div>
+          
           <hr className="border-neutral-800"/>
+
           <div className="py-1 flex justify-between">
-            <p className="text-neutral-300 text-lg">Mows</p>
+            <p className="text-neutral-300 text-base font-semibold">Mows</p>
             <p>{mowCount}</p>
           </div>
+
           <hr className="border-neutral-800"/>
+
           <div className="py-1 flex justify-between">
-            <p className="text-neutral-300 text-lg">Buhs</p>
+            <p className="text-neutral-300 text-base font-semibold">Buhs</p>
             <p>{buhCount}</p>
           </div>
-          <hr className="border-neutral-700"/>
-          <div className="py-1 flex justify-between text-lg">
-            <p className="text-neutral-200">Total Messages</p>
-            <p className="text-neutral-300">{messageCount}</p>
+
+          <hr className="border-neutral-800"/>
+
+          <div className="py-1 flex justify-between text-base">
+            <p className="text-neutral-300 text-base font-semibold">Total Messages</p>
+            <p>{messageCount}</p>
           </div>
         </div>
       </div>

@@ -10,14 +10,14 @@ export default function Leaderboard({ stats }) {
                 <thead className="border-b rounded-md border-neutral-800 ">
                     <tr>
                         <th className= "text-left text-neutral-300">User</th>
-                        <th className= "text-center text-neutral-300">Meows</th>
+                        <th className= "text-right text-neutral-300">Meows</th>
                     </tr>
                 </thead>
                 <tbody className=" text-neutral-400" >
                     {stats.slice(0, 10).map((user) => (
                         <tr key={user._id}>
                             <td className="text-left">{user.username}</td>
-                            <td className="text-center">{user.totalMessages}</td>
+                            <td className="text-right">{user.totalMessages}</td>
                         </tr>
                     ))}
                 </tbody>
