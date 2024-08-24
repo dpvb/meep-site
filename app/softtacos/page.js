@@ -1,39 +1,38 @@
 import ClickyMeep from "@/components/ClickyMeep";
-import clientPromise from "@/lib/mongodb";
-import Link from "next/link";
+import LinkMeep from "@/components/LinkMeep";
+import { headers } from "next/headers";
+import { isMobile } from "@/utils/isMobile";
 import "@/app/softtacos/page.css"
 
 export const revalidate = 0;
 
 export default async function Home() {
-  const stats = await getStats();
-
+  const userAgent = headers().get("user-agent") || "";
+  const mobile = isMobile(userAgent);
   return (
     //This wrapper is important for mobile and how it loads the page
     <div className="wrapper overflow-hidden relative min-h-screen w-full">
       <main className="flex flex-col w-3/4 mx-auto items-center">
-          <div className="flex mt-8 items-center gap-4">
+        {mobile ? 
+        (
+          <div className="flex flex-col items-center gap-4">
             <ClickyMeep size={700} />
+            <LinkMeep link="/"/>
           </div>
-          <div>
-            <Link href="/">hi, im Zelda</Link>
+        ) 
+        : 
+        (
+          <div className="flex flex-col items-center">
+            <div className="flex mt-8 justify-end w-10/12 fixed">
+              <LinkMeep link="/"/>
+            </div>
+            <div className="flex items-center gap-4">
+              <ClickyMeep size={700} />
+            </div>
           </div>
+          
+        )}
       </main>
     </div>
   );
-}
-
-async function getStats() {
-  try {
-    const client = await clientPromise;
-    const db = client.db("meep");
-    const stats = await db
-        .collection("message-stats")
-        .find({})
-        .toArray();
-    return stats;
-} catch (e) {
-    console.error(e);
-}
-return [];
 }

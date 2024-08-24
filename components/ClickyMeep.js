@@ -45,7 +45,7 @@ export default function ChromaMeep({ size }) {
 
                     className={`
                         cursor-pointer
-                        ${boom ? "animate-boom" : ""}
+                        ${boom ? "animate-lesserboom" : ""}
                     `}
                 />    
             </div>

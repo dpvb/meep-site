@@ -13,6 +13,10 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       keyframes: {
+        lesserboom: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+        },
         boom: {
           "0%, 100%": { transform: "scale(1)" },
           "50%": { transform: "scale(1.2)" },
@@ -45,6 +49,7 @@ module.exports = {
         }
       },
       animation: {
+        "lesserboom": "lesserboom 50ms ease-in-out forwards",
         "wiggle": "wiggle 2s ease-in-out infinite",
         "boom": "boom 50ms ease-in-out forwards",
         "rainbow": "rainbow 3s ease infinite",
