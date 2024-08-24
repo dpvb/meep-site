@@ -22,12 +22,16 @@ export default function ChromaMeep() {
             `}>
             <Image 
                 src="/chromameep.gif"
+                priority
+
                 width={100}
                 height={100}
-                priority
+                
                 alt="Chroma Meep"
-                onClick={handleClick}
+
                 draggable="false"
+                onClick={handleClick}
+                
                 className={`
                     cursor-pointer
                     ${boom ? "animate-boom" : ""}
