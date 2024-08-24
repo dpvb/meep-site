@@ -1,6 +1,7 @@
 import Leaderboard from "@/components/Leaderboard";
 import MessageStats from "@/components/MessageStats";
 import ChromaMeep from "@/components/ChromaMeep";
+import LinkMeep from "@/components/LinkMeep";
 import clientPromise from "@/lib/mongodb";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -15,7 +16,6 @@ export default async function Home() {
   return (
     <main className="relative min-h-screen">
       <div className="pb-20 flex flex-col items-center mx-auto">
-
         <div className="flex mt-8 items-center gap-4">
           <ChromaMeep/>
           <p className="text-7xl mt-[10px] font-bold bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 w-min bg-clip-text text-transparent animate-rainbow"
@@ -23,14 +23,12 @@ export default async function Home() {
             Meep</p>
         </div>
 
-        <div className="flex flex-col md:flex-row items-start gap-4">
+        <div className="flex flex-col md:flex-row items-start gap-4 mb-4">
           <Leaderboard stats={stats} />
           <MessageStats stats={stats} />
         </div>
 
-        <div>
-          <Link href="softtacos">hi im Link</Link>
-        </div>
+        <LinkMeep link="softtacos"/>
 
       </div>
       <Footer />
