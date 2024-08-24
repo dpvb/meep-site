@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 import SpawnableText from "@/components/SpawnableText";
 
 export default function ChromaMeep({ size }) {
@@ -27,19 +27,22 @@ export default function ChromaMeep({ size }) {
     return (
         <div>
 
-            <div
-            className={`
+            <div className={`
                 animate-wiggle fill-mode-both
                 repeat-infinite
             `}>
                 <Image 
                     src="/chromameep.gif"
-                    width={size}
-                    height={size}
                     priority
+
+                    height={size}
+                    width={size}
+
                     alt="Chroma Meep"
-                    onClick={handleClick}
+
                     draggable="false"
+                    onClick={handleClick}
+
                     className={`
                         cursor-pointer
                         ${boom ? "animate-boom" : ""}
@@ -47,12 +50,7 @@ export default function ChromaMeep({ size }) {
                 />    
             </div>
 
-            <div
-            draggable="false" 
-            className={`
-                overflow-x-hidden
-                overflow-y-hidden
-            `}>
+            <div draggable="false">
                 {texts.map((text, index) => (
                     <SpawnableText 
                     key={index} 

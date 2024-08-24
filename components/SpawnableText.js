@@ -63,12 +63,16 @@ export default function SpawnableText({ x, y, duration }) {
         className={`
             absolute
             transform -translate-x-1/2 -translate-y-1/2
+
             font-extrabold
-            pointer-events-none
             text-7xl
-            bg-gradient-to-r ${gradient.from} ${gradient.via} ${gradient.to}
-            bg-clip-text
             text-transparent
+            
+            bg-clip-text
+            bg-gradient-to-r ${gradient.from} ${gradient.via} ${gradient.to}
+            
+            pointer-events-none
+
             animate-floatfade
         `}
         style={{
