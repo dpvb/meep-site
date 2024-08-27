@@ -5,8 +5,7 @@ import LinkMeep from "@/components/LinkMeep";
 import clientPromise from "@/lib/mongodb";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import "@/app/page.css"
-
+import "@/app/page.css";
 
 export const revalidate = 0;
 
@@ -17,10 +16,13 @@ export default async function Home() {
     <main className="relative min-h-screen">
       <div className="pb-20 flex flex-col items-center mx-auto">
         <div className="flex mt-8 items-center gap-4">
-          <ChromaMeep/>
-          <p className="text-7xl mt-[10px] font-bold bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 w-min bg-clip-text text-transparent animate-rainbow"
-          style={{ backgroundSize: '200% 200%' }}>
-            Meep</p>
+          <ChromaMeep />
+          <p
+            className="text-7xl mt-[10px] font-bold bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 w-min bg-clip-text text-transparent animate-rainbow"
+            style={{ backgroundSize: "200% 200%" }}
+          >
+            Meep
+          </p>
         </div>
 
         <div className="flex flex-col md:flex-row items-start gap-4 mb-4">
@@ -28,8 +30,7 @@ export default async function Home() {
           <MessageStats stats={stats} />
         </div>
 
-        <LinkMeep link="softtacos"/>
-
+        <LinkMeep link="softtacos" />
       </div>
       <Footer />
     </main>
@@ -40,13 +41,10 @@ async function getStats() {
   try {
     const client = await clientPromise;
     const db = client.db("meep");
-    const stats = await db
-        .collection("message-stats")
-        .find({})
-        .toArray();
+    const stats = await db.collection("message-stats").find({}).toArray();
     return stats;
-} catch (e) {
+  } catch (e) {
     console.error(e);
-}
-return [];
+  }
+  return [];
 }
