@@ -6,6 +6,7 @@ import clientPromise from "@/lib/mongodb";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import "@/app/page.css";
+import Searchbar from "@/components/Searchbar";
 
 export const revalidate = 0;
 
@@ -23,6 +24,10 @@ export default async function Home() {
           >
             Meep
           </p>
+        </div>
+
+        <div className="mt-4">
+          <Searchbar />
         </div>
 
         <div className="flex flex-col md:flex-row items-start gap-4 mb-4">

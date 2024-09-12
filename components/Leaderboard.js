@@ -1,6 +1,4 @@
 export default function Leaderboard({ stats }) {
-
-//  console.log(stats);
     stats.sort((a, b) => b.totalMessages - a.totalMessages);
 
     return (
